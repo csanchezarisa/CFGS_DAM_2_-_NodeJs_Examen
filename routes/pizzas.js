@@ -5,7 +5,7 @@ const Restaurante = require('../models/restaurantes');
 
 router.get('/', (req, res) => {
 
-    Pizza.find().populate('restaurante').exec((err, documents) => {
+    Pizza.find().populate('restaurante').sort('nombre').exec((err, documents) => {
         if (!err) {
             res.render('pizzas', {pizzas: documents});
         }
