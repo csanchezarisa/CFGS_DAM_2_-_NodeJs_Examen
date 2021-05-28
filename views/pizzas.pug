@@ -26,6 +26,7 @@ html
 								th precio
 								th precio IVA
 								th vegetariana
+								th restaurante
 								th
 						tbody
 							each pizza in pizzas 
@@ -34,5 +35,6 @@ html
 									td #{pizza.precio}
 									td #{pizza.precioIVA}
 									td #{pizza.vegetariana}
+									td #{pizza.restaurante.nombre}
 									td
 										a.btn.btn-warning.btn-sm.active(href="/pizzas/delete/" + pizza._id, role="button", aria-pressed="true") Eliminar

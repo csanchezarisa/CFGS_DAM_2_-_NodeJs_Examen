@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Pizza = require('../models/pizzas');
+const Restaurante = require('../models/restaurantes');
 
 router.get('/', (req, res) => {
 
-    Pizza.find((err, documents) => {
+    Pizza.find().populate('restaurante').exec((err, documents) => {
         if (!err) {
             res.render('pizzas', {pizzas: documents});
         }
