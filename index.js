@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const pizzasRouter = require('./routes/pizzas');
+const apiRouter = require('./routes/api');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.urlencoded({extended: true}));
 
 // Routes
 app.use('/pizzas', pizzasRouter);
+app.use('/api', apiRouter);
 
 app.get('/', (req, res) => {
 
