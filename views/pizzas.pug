@@ -27,9 +27,10 @@ html
 								th vegetariana
 								th
 						tbody
-							tr
-								td Carbonara
-								td 10 €
-								td no
-								td
-									a.btn.btn-warning.btn-sm.active(href="/pizzas/delete/000000000000000000000000", role="button", aria-pressed="true") Eliminar
+							each pizza in pizzas 
+								tr
+									td #{pizza.nombre}
+									td #{pizza.precio}
+									td #{pizza.vegetariana}
+									td
+										a.btn.btn-warning.btn-sm.active(href="/pizzas/delete/" + pizza._id, role="button", aria-pressed="true") Eliminar
