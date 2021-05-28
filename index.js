@@ -24,13 +24,13 @@ app.use(express.urlencoded({extended: true}));
 // Routes
 app.get('/', (req, res) => {
 
-    res.render('mensaje');
+    res.render('mensaje', {mensaje: 'Hola, Bienvenido/a'});
 
 });
 
 app.use('*', (req, res) => {
 
-    res.render('mensaje');
+    res.render('mensaje', {mensaje: 'ERROR 404: SITIO NO ENCONTRADO'});
 
 });
 
