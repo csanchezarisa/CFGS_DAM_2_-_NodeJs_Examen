@@ -20,4 +20,19 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+
+// Routes
+app.get('/', (req, res) => {
+
+    res.render('mensaje');
+
+});
+
+app.use('*', (req, res) => {
+
+    res.render('mensaje');
+
+});
+
+
 app.listen(3000);
