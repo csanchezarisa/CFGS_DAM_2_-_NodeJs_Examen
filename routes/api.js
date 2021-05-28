@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Pizza = require('../models/pizzas');
 
-router.get('/:id', (req, res) => {
+router.get('/:id([0-9a-z]{24})', (req, res) => {
 
     console.log(req.params.id);
 
