@@ -24,6 +24,7 @@ html
 							tr
 								th nombre
 								th precio
+								th precio IVA
 								th vegetariana
 								th
 						tbody
@@ -31,6 +32,7 @@ html
 								tr
 									td #{pizza.nombre}
 									td #{pizza.precio}
+									td #{pizza.precioIVA}
 									td #{pizza.vegetariana}
 									td
 										a.btn.btn-warning.btn-sm.active(href="/pizzas/delete/" + pizza._id, role="button", aria-pressed="true") Eliminar

@@ -23,6 +23,10 @@ const pizzaSchema = mongoose.Schema({
     }
 })
 
+pizzaSchema.virtual('precioIVA').get(function() {
+    return this.precio * 1.21;
+});
+
 const Pizza = mongoose.model("pizzas", pizzaSchema);
 
 module.exports = Pizza;
